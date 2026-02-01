@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will you be my Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6e8, #ffeef5);
+      font-family: "Poppins", sans-serif;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      width: 320px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      position: relative;
+      height: 100px;
+    }
+
+    button {
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background: #ff4d6d;
+      color: white;
+      font-size: 18px;
+    }
+
+    #noBtn {
+      position: absolute;
+      background: #ddd;
+      color: #555;
+      right: 20px;
+      bottom: 0;
+    }
+
+    .yay {
+      display: none;
+    }
+
+    .yay img {
+      width: 200px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>Will you be my Valentine? 💖</h1>
+
+    <div class="buttons">
+      <button id="yesBtn">YES 💘</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <div class="card yay" id="yay">
+    <h1>YAY!!! 🎉💞</h1>
+    <p>You just made me the happiest 😭</p>
+    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="yay">
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const card = document.getElementById("card");
+    const yay = document.getElementById("yay");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * 200;
+      const y = Math.random() * 60;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      card.style.display = "none";
+      yay.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
